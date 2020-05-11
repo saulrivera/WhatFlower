@@ -16,15 +16,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPf-7T-z7L">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="458"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ip4-qs-fBU">
+                                <rect key="frame" x="8" y="554" width="398" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Zyp-uw-OsH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dPf-7T-z7L" secondAttribute="trailing" id="1EV-nb-OPR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dPf-7T-z7L" secondAttribute="bottom" id="Ikj-g8-Xz3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ip4-qs-fBU" secondAttribute="trailing" constant="8" id="34C-ez-7bZ"/>
+                            <constraint firstItem="Ip4-qs-fBU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="T8U-QL-adW"/>
                             <constraint firstItem="dPf-7T-z7L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wi3-Cy-1gW"/>
+                            <constraint firstItem="Ip4-qs-fBU" firstAttribute="top" secondItem="dPf-7T-z7L" secondAttribute="bottom" constant="8" id="a2y-Or-shw"/>
                             <constraint firstItem="dPf-7T-z7L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ea9-Xq-fIC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ip4-qs-fBU" secondAttribute="bottom" constant="8" id="emu-pM-K7O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -36,6 +48,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionLabel" destination="Ip4-qs-fBU" id="SSt-zM-LpY"/>
                         <outlet property="imageView" destination="dPf-7T-z7L" id="Gds-ll-mRC"/>
                     </connections>
                 </viewController>

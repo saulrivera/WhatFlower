@@ -13,8 +13,10 @@ import Vision
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     private var imagePickerController = UIImagePickerController()
+    private let networking = Networking()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,11 @@ class ViewController: UIViewController {
             
             if let firstResult = results.first {
                 self.navigationItem.title = firstResult.identifier.capitalized
+                self.networking.getInfo(for: firstResult.identifier) { description in
+                    DispatchQueue.main.async {
+                        self.descriptionLabel.text = description
+                    }
+                }
             }
         }
         
