@@ -13,6 +13,7 @@
 		B2D784892468AE6500ED2228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2D784872468AE6500ED2228 /* Main.storyboard */; };
 		B2D7848B2468AE6600ED2228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2D7848A2468AE6600ED2228 /* Assets.xcassets */; };
 		B2D7848E2468AE6600ED2228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2D7848C2468AE6600ED2228 /* LaunchScreen.storyboard */; };
+		B2D784962468AE7B00ED2228 /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B2D784952468AE7B00ED2228 /* FlowerClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B2D7848A2468AE6600ED2228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2D7848D2468AE6600ED2228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2D7848F2468AE6600ED2228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2D784952468AE7B00ED2228 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B2D7848A2468AE6600ED2228 /* Assets.xcassets */,
 				B2D7848C2468AE6600ED2228 /* LaunchScreen.storyboard */,
 				B2D7848F2468AE6600ED2228 /* Info.plist */,
+				B2D784952468AE7B00ED2228 /* FlowerClassifier.mlmodel */,
 			);
 			path = WhatFlower;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D784962468AE7B00ED2228 /* FlowerClassifier.mlmodel in Sources */,
 				B2D784862468AE6500ED2228 /* ViewController.swift in Sources */,
 				B2D784822468AE6500ED2228 /* AppDelegate.swift in Sources */,
 				B2D784842468AE6500ED2228 /* SceneDelegate.swift in Sources */,
