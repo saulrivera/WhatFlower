@@ -21,4 +21,11 @@ struct DataFlower: Decodable {
     let pageid: Int
     let title: String
     let extract: String
+    let thumbnail: Thumbnail
+}
+
+struct Thumbnail: Decodable {
+    let height: Int
+    let width: Int
+    let source: String
 }

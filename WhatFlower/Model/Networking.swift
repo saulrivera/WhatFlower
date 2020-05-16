@@ -15,14 +15,15 @@ struct Networking {
     private let baseParameters = [
         "format": "json",
         "action": "query",
-        "prop": "extracts",
+        "prop": "extracts|pageimages",
         "exintro": "",
         "explaintext": "",
         "indexpageids": "",
-        "redirects": "1"
+        "redirects": "1",
+        "pithumbsize": "500"
     ]
     
-    func getInfo(for flower: String, completition: @escaping (String) -> Void) {
+    func getInfo(for flower: String, completition: @escaping (String, String) -> Void) {
         var parameters = baseParameters
         parameters["titles"] = flower
         
@@ -33,8 +34,13 @@ struct Networking {
                     do {
                         let decoder = JSONDecoder()
                         let dataFlower = try decoder.decode(DataFlowerBatch.self, from: data)
-                        let description = dataFlower.query.pages[dataFlower.query.pageids.first!]!.extract
-                        completition(description)
+                        
+                        let pageId = dataFlower.query.pageids.first!
+                        let pages = dataFlower.query.pages
+                        
+                        let description = pages[pageId]!.extract
+                        let flowerImageUrl = pages[pageId]!.thumbnail.source
+                        completition(description, flowerImageUrl)
                     } catch {
                         print(error)
                     }

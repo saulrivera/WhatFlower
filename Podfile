@@ -7,5 +7,6 @@ target 'WhatFlower' do
 
   # Pods for WhatFlower
   pod 'Alamofire', '~> 5.1'
+  pod 'SDWebImage'
 
 end

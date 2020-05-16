@@ -9,6 +9,7 @@
 import UIKit
 import CoreML
 import Vision
+import SDWebImage
 
 class ViewController: UIViewController {
 
@@ -42,9 +43,10 @@ class ViewController: UIViewController {
             
             if let firstResult = results.first {
                 self.navigationItem.title = firstResult.identifier.capitalized
-                self.networking.getInfo(for: firstResult.identifier) { description in
+                self.networking.getInfo(for: firstResult.identifier) { description, flowerImageUrl in
                     DispatchQueue.main.async {
                         self.descriptionLabel.text = description
+                        self.imageView.sd_setImage(with: URL(string: flowerImageUrl))
                     }
                 }
             }
@@ -65,7 +67,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let imagePicked = info[.editedImage] as? UIImage {
-            imageView.image = imagePicked
             
             guard let ciimage = CIImage(image: imagePicked) else {
                 fatalError("Error converting to CIImage")
